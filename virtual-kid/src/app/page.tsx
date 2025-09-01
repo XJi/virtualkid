@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Typewriter from './components/Typewriter';
 
 export default function Home() {
   return (
@@ -46,8 +47,16 @@ export default function Home() {
               I’m a software developer with a drop of artist spirit. This site is my home base for artwork and experiments at the intersection of creativity and code.
             </p>
             <p>
-              Here, I share my creativity at the edge of design × engineering.
+              I share my creativity at the edge of design × engineering.
               Dive in, get inspired, and feel free to say hi! 
+            </p>
+                <p className="mt-6 text-slate-300/90 leading-relaxed">
+              <Typewriter
+                text="Here is what's coming next ..."
+                speed={77}        // tweak: lower = faster
+                startDelay={700}  // wait a beat before typing
+                cursor
+              />
             </p>
           </div>
 
