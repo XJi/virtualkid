@@ -50,13 +50,13 @@ export default function Home() {
               I share my creativity at the edge of design × engineering.
               Dive in, get inspired, and feel free to say hi! 
             </p>
-                <p className="mt-6 text-slate-300/90 leading-relaxed">
+            <p className="mt-6 text-slate-300/90 leading-relaxed">
               <Typewriter
-                text="Here is what's coming next ..."
+                text="Stay tuned! Here is what's coming next ..."
                 speed={77}        // tweak: lower = faster
                 startDelay={700}  // wait a beat before typing
                 cursor
-              />
+            />
             </p>
           </div>
 
