@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Carousel from '../components/Carousel';
 import type { CSSProperties } from 'react';
 
 type CSSVars = CSSProperties & { ['--tile-h']?: string };
@@ -12,7 +13,7 @@ const featured: Item = {
 };
 
 const thumbs: Item[] = [
-  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Street" },
+  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bey" },
   { src: "/gallery/oil-pastel-2.jpeg", title: "Neon Overlook" },
   { src: "/gallery/oil-pastel-3.jpg", title: "Golden Ridge" },
   { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
@@ -58,6 +59,15 @@ export default function GalleryPage() {
    * Tweak the px value once and both columns stay in sync.
    */
   const tileHeight = "640px"; // <- adjust to taste (e.g., "560px", "720px")
+  const carouselItems = [
+    { src: '/gallery/watercolor-1.jpeg', caption: 'Golden Gate - San Fransisco' },
+    { src: '/gallery/oil-pastel-5.jpg', caption: 'Rainy Skyline' },
+    { src: '/gallery/oil-pastel-6.jpeg', caption: 'Retro Console' },
+    { src: '/gallery/oil-pastel-7.jpg', caption: 'Harbor Lights' },
+    { src: '/gallery/oil-pastel-8.jpeg', caption: 'Night Market' },
+    { src: '/gallery/oil-pastel-9.jpeg', caption: 'City Rail' },
+    { src: '/gallery/oil-pastel-10.jpg', caption: 'City Rail' },
+  ];
 
   return (
     <div id="top" className="space-y-6">
@@ -91,6 +101,15 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      {/* Carousel BELOW */}
+      <div className="mt-4">
+        <h2 className="mb-3 text-xl font-semibold tracking-tight">More Works</h2>
+        <Carousel 
+          items={carouselItems}
+          aspect="4 / 5"
+        />
+      </div>
 
       {/* Back to top FAB */}
       <a
