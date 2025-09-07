@@ -66,7 +66,7 @@ export default function GalleryPage() {
     { src: '/gallery/oil-pastel-7.jpg', caption: 'Harbor Lights' },
     { src: '/gallery/oil-pastel-8.jpeg', caption: 'Night Market' },
     { src: '/gallery/oil-pastel-9.jpeg', caption: 'City Rail' },
-    { src: '/gallery/oil-pastel-10.jpg', caption: 'City Rail' },
+    { src: '/gallery/oil-pastel-10.jpg', caption: 'Spring Pond' },
   ];
 
   return (
@@ -82,7 +82,7 @@ export default function GalleryPage() {
           - 12-grid; left 5/12 (~41.7%), right 7/12 (~58.3%)
           - items-stretch so children fill equal height */}
       <section
-        className="grid gap-4 items-stretch lg:grid-cols-11"
+        className="grid gap-3 items-stretch lg:grid-cols-11"
         style={mosaicStyle}   // <-- no any, lint is happy
       >
         {/* LEFT: feature (takes ~40%) */}
@@ -94,7 +94,7 @@ export default function GalleryPage() {
 
         {/* RIGHT: 2×2 grid (takes ~55%), SAME HEIGHT as left */}
        <div className="lg:col-span-6">
-         <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-4">
+         <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-3">
             {thumbs.map((it) => (
               <Card key={it.src} item={it} className="h-full w-full" />
             ))}
