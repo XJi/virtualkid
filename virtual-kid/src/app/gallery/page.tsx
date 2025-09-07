@@ -101,6 +101,7 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+      <hr className="border-white/10" />
 
       {/* Carousel BELOW */}
       <div className="mt-4">

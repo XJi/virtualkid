@@ -4,7 +4,7 @@ import SiteHeader from './components/SiteHeader';
 
 export const metadata = {
   title: 'Xiaojing Ji — Art & Code',
-  description: 'Oil pastel artwork, writing, and projects by Xiaojing Ji.',
+  description: 'Oil pastel artwork, writing, and projects by Xiaojing.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
