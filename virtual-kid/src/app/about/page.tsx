@@ -36,15 +36,15 @@ export default function AboutPage() {
 
       {/* Introduction */}
       <p className={`${inter.className} mt-8 text-slate-300/90 leading-relaxed tracking-wide`}>
-        Hello! I'm Xiaojing, a software developer and artist based in the Seattle Area. Obsseessed to drawing after 5, exposed programming in PASCAL(yeah, it's fossil nowadays lol) and C back when I was 11. 
+        Hello! I&aposm Xiaojing, a software developer and artist based in the Seattle Area. Obsseessed to drawing after 5, exposed programming in PASCAL(yeah, it&aposs fossil nowadays lol) and C back when I was 11. 
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">What I'm into</h2>
       <ul className={`${inter.className} mt-4 text-slate-300/90 leading-relaxed tracking-wide space-y-2`}>
         <li>• Explore new stuff on city walks</li>
         <li>• Try new food and restaurants 😋</li>
-        <li>• Curious where the AI evolution will bring humanity to - it's a fun era to be alive</li>
-        <li>• When I'm not shipping code, I'm sketching neon cityscapes or planning the next trip</li>
+        <li>• Curious where the AI evolution will bring humanity to - it&aposs a fun era to be alive</li>
+        <li>• When I&aposm not shipping code, I'm sketching neon cityscapes or planning the next trip</li>
       </ul>
 
       <h3 className="mt-10 text-2xl font-bold">About this website</h3>
