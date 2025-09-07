@@ -1,4 +1,7 @@
 import Image from "next/image";
+import type { CSSProperties } from 'react';
+
+type CSSVars = CSSProperties & { ['--tile-h']?: string };
 
 /** Simple image item type */
 type Item = { src: string; title: string };
@@ -14,6 +17,9 @@ const thumbs: Item[] = [
   { src: "/gallery/oil-pastel-3.jpg", title: "Golden Ridge" },
   { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
 ];
+
+const tileHeight = '640px'; // <- adjust to taste (e.g., "560px", "720px")
+const mosaicStyle: CSSVars = { ['--tile-h']: tileHeight };
 
 /** Generic card with hover and proper object-fit */
 function Card({
@@ -66,8 +72,8 @@ export default function GalleryPage() {
           - 12-grid; left 5/12 (~41.7%), right 7/12 (~58.3%)
           - items-stretch so children fill equal height */}
       <section
-        className="grid gap-6 items-stretch lg:grid-cols-12"
-        style={{ ["--tile-h" as any]: tileHeight }}
+        className="grid gap-4 items-stretch lg:grid-cols-11"
+        style={mosaicStyle}   // <-- no any, lint is happy
       >
         {/* LEFT: feature (takes ~40%) */}
         <div className="lg:col-span-5">
@@ -76,9 +82,9 @@ export default function GalleryPage() {
           </div>
         </div>
 
-        {/* RIGHT: 2×2 grid (takes ~60%), SAME HEIGHT as left */}
-        <div className="lg:col-span-7">
-          <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-6">
+        {/* RIGHT: 2×2 grid (takes ~55%), SAME HEIGHT as left */}
+       <div className="lg:col-span-6">
+         <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-4">
             {thumbs.map((it) => (
               <Card key={it.src} item={it} className="h-full w-full" />
             ))}
