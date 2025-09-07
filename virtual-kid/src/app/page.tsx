@@ -3,11 +3,11 @@ import Typewriter from './components/Typewriter';
 
 export default function Home() {
   return (
-    <div className="rounded-3xl bg-slate-900/30 p-4 md:p-6 border border-white/5">
+    <div className="rounded-3xl bg-slate-900/30 p-4 md:p-6">
       <section className="grid grid-cols-1 gap-6 lg:grid-cols-12  items-stretch">
         {/* Left: big photo */}
         <div className="lg:col-span-5  h-full flex flex-col">
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 h-full">
+          <div className="overflow-hidden rounded-3xl bg-slate-900/40 h-full">
             <Image
               src="/hero-studio.jpg"          // <-- put a large 1600x1200-ish image in /public with this name
               alt="Studio workspace"
@@ -21,7 +21,7 @@ export default function Home() {
 
       {/* Right: profile card */}
       <aside className="lg:col-span-7 h-full flex flex-col">
-        <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-8 md:p-10  h-full flex flex-col">
+        <div className="rounded-3xl bg-slate-900/70 p-8 md:p-10  h-full flex flex-col">
           {/* Avatar */}
           <div className="mb-6">
             <Image
