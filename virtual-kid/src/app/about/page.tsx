@@ -39,7 +39,7 @@ export default function AboutPage() {
         Hello! I&apos;m Xiaojing, a software developer and artist based in the Seattle Area. Obsseessed to drawing after 5, exposed to programming in PASCAL(yeah, it&apos;s fossil nowadays lol) and C back when I was 11. 
       </p>
 
-      <h2 className="mt-10 text-2xl font-bold">What I'm into</h2>
+      <h2 className="mt-10 text-2xl font-bold">What I&apos;m into</h2>
       <ul className={`${inter.className} mt-4 text-slate-300/90 leading-relaxed tracking-wide space-y-2`}>
         <li>• Explore new stuff on city walks</li>
         <li>• Try new food and restaurants 😋</li>
