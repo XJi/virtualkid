@@ -65,7 +65,7 @@ export default function AboutPage() {
       <p className={`${inter.className} mt-8 text-slate-300/90 leading-relaxed tracking-wide`}>
         👉🏻  
         <a 
-          href="/Xiaojing-Ji-2025.pdf" 
+          href="/Xiaojing-Ji-2025-Resume.pdf" 
           download 
           className="ml-2 inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 underline transition-colors"
         >
