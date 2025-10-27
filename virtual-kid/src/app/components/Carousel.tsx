@@ -23,6 +23,7 @@ export default function Carousel({
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
   const [cardWidth, setCardWidth] = useState(0);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   useEffect(() => {
     const el = trackRef.current;
@@ -60,6 +61,21 @@ export default function Carousel({
     if (e.key === 'ArrowLeft') scrollBy(-1);
   };
 
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedItem(null);
+    };
+    if (selectedItem) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [selectedItem]);
+
   const data = useMemo(() => items ?? [], [items]);
 
   const figStyle = { aspectRatio: aspect } as CSSProperties;
@@ -70,24 +86,27 @@ export default function Carousel({
         {data.map((it, i) => (
           <figure
             key={it.src + i}
-            style={figStyle}
+            onClick={() => setSelectedItem(it)}
             className="
-              group relative flex-none snap-start overflow-hidden
-              rounded-2xl border border-white/10 bg-slate-900/40
+              group flex-none snap-start flex flex-col cursor-pointer
+              rounded-2xl border border-white/10 bg-slate-900/40 overflow-hidden
               w-[85%] sm:w-[60%] md:w-[40%] lg:w-[calc(25%-4px)]   /* 4-up at lg */
+              transition-transform duration-300 hover:scale-[1.02]
             "
           >
-            <Image
-              src={it.src}
-              alt={it.alt ?? 'Carousel image'}
-              fill
-              sizes="(min-width:1024px) 25vw, (min-width:768px) 40vw, 60vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              priority={i < 2}
-            />
+            <div className="relative overflow-hidden" style={figStyle}>
+              <Image
+                src={it.src}
+                alt={it.alt ?? 'Carousel image'}
+                fill
+                sizes="(min-width:1024px) 25vw, (min-width:768px) 40vw, 60vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                priority={i < 2}
+              />
+            </div>
             {it.caption && (
-              <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-slate-900/40 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <span className="rounded bg-slate-900/60 px-2 py-0.5 text-xs text-slate-200">{it.caption}</span>
+              <figcaption className="p-4 bg-slate-900/60">
+                <span className="text-sm leading-relaxed text-slate-200 whitespace-pre-line block">{it.caption}</span>
               </figcaption>
             )}
           </figure>
@@ -106,6 +125,44 @@ export default function Carousel({
         disabled={atEnd}
         className="absolute right-0 top-1/2 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full bg-slate-800/70 border border-white/10 text-white shadow-lg hover:bg-slate-800/90 disabled:opacity-40"
       >›</button>
+
+      {/* Lightbox Modal */}
+      {selectedItem && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedItem(null)}
+        >
+          <button
+            onClick={() => setSelectedItem(null)}
+            className="absolute top-4 right-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-slate-800/80 text-white text-xl hover:bg-slate-800 transition-colors"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <div
+            className="relative max-w-6xl w-full flex flex-col bg-slate-900/95 rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-[60vh] md:h-[70vh]">
+              <Image
+                src={selectedItem.src}
+                alt={selectedItem.alt ?? 'Magnified image'}
+                fill
+                sizes="90vw"
+                className="object-contain"
+                priority
+              />
+            </div>
+            {selectedItem.caption && (
+              <div className="bg-slate-900/95 backdrop-blur-sm p-6">
+                <p className="text-base leading-relaxed text-slate-200 whitespace-pre-line">
+                  {selectedItem.caption}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

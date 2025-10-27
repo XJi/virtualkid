@@ -1,6 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import Carousel from '../components/Carousel';
-import type { CSSProperties } from 'react';
+import { useState, useEffect, type CSSProperties } from 'react';
 
 type CSSVars = CSSProperties & { ['--tile-h']?: string };
 
@@ -13,7 +15,7 @@ const featured: Item = {
 };
 
 const thumbs: Item[] = [
-  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bey" },
+  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bay" },
   { src: "/gallery/oil-pastel-2.jpeg", title: "Neon Overlook" },
   { src: "/gallery/oil-pastel-3.jpg", title: "Golden Ridge" },
   { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
@@ -27,14 +29,17 @@ function Card({
   item,
   className = "",
   priority = false,
+  onClick,
 }: {
   item: Item;
   className?: string;
   priority?: boolean;
+  onClick?: () => void;
 }) {
   return (
     <figure
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 ${className}`}
+      onClick={onClick}
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 ${onClick ? 'cursor-pointer hover:scale-[1.02] transition-transform duration-300' : ''} ${className}`}
     >
       <Image
         src={item.src}
@@ -54,15 +59,31 @@ function Card({
 }
 
 export default function GalleryPage() {
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedItem(null);
+    };
+    if (selectedItem) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [selectedItem]);
   /**
    * Use a single height variable so LEFT and RIGHT match perfectly.
    * Tweak the px value once and both columns stay in sync.
    */
   const tileHeight = "640px"; // <- adjust to taste (e.g., "560px", "720px")
   const carouselItems = [
-    { src: '/gallery/watercolor-1.jpeg', caption: 'Golden Gate - San Fransisco' },
-    { src: '/gallery/oil-pastel-5.jpg', caption: 'Rainy Skyline' },
-    { src: '/gallery/oil-pastel-6.jpeg', caption: 'Retro Console' },
+    { src: '/gallery/watercolor-1.jpeg', caption: 'Wiisphers Over The Bay\nSan Francisco is a feeling, a moment between sips of coffee, between light and mist, to the scent of roasted coffee beans curling through the morning fog ' },
+    { src: '/gallery/oil-pastel-5.jpg', caption: 'Rosey Skyline\n The boundary between dawn and morning through the veil of a dream, where light replaces detail, and the city becomes a whisper of color in the sky.' },
+    { src: '/gallery/oil-pastel-6.jpeg', caption: 'City Between Clouds\nWhen the city has drifted into a dream, where its skyline dissolves into a haze of rose-gold and lavender mist.' },
     { src: '/gallery/oil-pastel-7.jpg', caption: 'Harbor Lights' },
     { src: '/gallery/oil-pastel-8.jpeg', caption: 'Night Market' },
     { src: '/gallery/oil-pastel-9.jpeg', caption: 'City Rail' },
@@ -71,10 +92,13 @@ export default function GalleryPage() {
 
   return (
     <div id="top" className="space-y-6">
-      <header className="flex items-center justify-between">
-        <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+      <header>
+        <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4">
           Art Gallery
         </h1>
+        <p className="text-slate-300/90 leading-relaxed">
+          In my spare time, I love to experiment with color combinations and dynamics using oil pastels and watercolor.
+        </p>
       </header>
       <hr className="border-white/10" />
 
@@ -88,7 +112,7 @@ export default function GalleryPage() {
         {/* LEFT: feature (takes ~40%) */}
         <div className="lg:col-span-5">
           <div className="h-[420px] md:h-[520px] lg:h-[var(--tile-h)]">
-            <Card item={featured} priority className="h-full w-full" />
+            <Card item={featured} priority className="h-full w-full" onClick={() => setSelectedItem(featured)} />
           </div>
         </div>
 
@@ -96,7 +120,7 @@ export default function GalleryPage() {
        <div className="lg:col-span-6">
          <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-3">
             {thumbs.map((it) => (
-              <Card key={it.src} item={it} className="h-full w-full" />
+              <Card key={it.src} item={it} className="h-full w-full" onClick={() => setSelectedItem(it)} />
             ))}
           </div>
         </div>
@@ -120,6 +144,42 @@ export default function GalleryPage() {
       >
         ↑
       </a>
+
+      {/* Lightbox Modal */}
+      {selectedItem && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedItem(null)}
+        >
+          <button
+            onClick={() => setSelectedItem(null)}
+            className="absolute top-4 right-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-slate-800/80 text-white text-xl hover:bg-slate-800 transition-colors"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <div
+            className="relative max-w-6xl w-full flex flex-col bg-slate-900/95 rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-[60vh] md:h-[70vh]">
+              <Image
+                src={selectedItem.src}
+                alt={selectedItem.title}
+                fill
+                sizes="90vw"
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="bg-slate-900/95 backdrop-blur-sm p-6">
+              <p className="text-lg font-semibold text-slate-200">
+                {selectedItem.title}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
