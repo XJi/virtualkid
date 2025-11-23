@@ -7,11 +7,12 @@ import { useState, useEffect, type CSSProperties } from 'react';
 type CSSVars = CSSProperties & { ['--tile-h']?: string };
 
 /** Simple image item type */
-type Item = { src: string; title: string };
+type Item = { src: string; title: string; description?: string };
 
-const featured: Item = {
+const artStudio: Item = {
   src: "/gallery/tokyo-tower.jpg",
   title: "Studio Desk",
+  description: "One of my latest drawing. This is where I usually draw at home",
 };
 
 const thumbs: Item[] = [
@@ -112,7 +113,7 @@ export default function GalleryPage() {
         {/* LEFT: feature (takes ~40%) */}
         <div className="lg:col-span-5">
           <div className="h-[420px] md:h-[520px] lg:h-[var(--tile-h)]">
-            <Card item={featured} priority className="h-full w-full" onClick={() => setSelectedItem(featured)} />
+            <Card item={artStudio} priority className="h-full w-full" onClick={() => setSelectedItem(artStudio)} />
           </div>
         </div>
 
@@ -176,6 +177,11 @@ export default function GalleryPage() {
               <p className="text-lg font-semibold text-slate-200">
                 {selectedItem.title}
               </p>
+              {selectedItem.description && (
+                <p className="mt-2 text-sm text-slate-400">
+                  {selectedItem.description}
+                </p>
+              )}
             </div>
           </div>
         </div>
