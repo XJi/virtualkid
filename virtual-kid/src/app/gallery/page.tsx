@@ -84,8 +84,8 @@ export default function GalleryPage() {
     { src: '/gallery/watercolor-1.jpeg', caption: 'Wiisphers Over The Bay\nSan Francisco is a feeling, a moment between sips of coffee, between light and mist, to the scent of roasted coffee beans curling through the morning fog ' },
     { src: '/gallery/oil-pastel-5.jpg', caption: 'Rosey Skyline\n The boundary between dawn and morning through the veil of a dream, where light replaces detail, and the city becomes a whisper of color in the sky.' },
     { src: '/gallery/oil-pastel-6.jpeg', caption: 'City Between Clouds\nWhen the city has drifted into a dream, where its skyline dissolves into a haze of rose-gold and lavender mist.' },
-    { src: '/gallery/oil-pastel-7.jpg', caption: 'Harbor Lights' },
-    { src: '/gallery/oil-pastel-8.jpeg', caption: 'Night Market' },
+    { src: '/gallery/oil-pastel-7.jpg', caption: 'Pastel Twilight\n The landscape of South Lake Union in Seattle. Before the traffic, before the rain, to remember the sheer beauty of the geographic location that anchors the city.' },
+    { src: '/gallery/oil-pastel-8.jpeg', caption: 'The Misty Empire State\n A rare moment where Manhattan seems to pause — softened by morning fog, grounded by the expansive calm of Central Park. A place where the city and nature meet in a hush of turquoise.' },
     { src: '/gallery/oil-pastel-9.jpeg', caption: 'City Rail' },
     { src: '/gallery/oil-pastel-10.jpg', caption: 'Spring Pond' },
   ];
