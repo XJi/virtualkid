@@ -15,9 +15,9 @@ const artStudio: Item = {
   description: "One of my latest drawing. This is where I usually draw at home",
 };
 
-const thumbs: Item[] = [
-  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bay" },
-  { src: "/gallery/oil-pastel-2.jpeg", title: "Neon Overlook" },
+const artworkThumbs: Item[] = [
+  { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bay",description: "The gorgeous sunset of Pudget Sound, capturing the serene beauty of Pacific Northwest." },
+  { src: "/gallery/oil-pastel-2.jpeg", title: "Neon Overlook", description: "Seattle glows at the edge of day, where sunset melts into the sea and the skyline shimmers like embers. The world feels suspended — warm, electric, and infinite beneath a sky of fire and rose." },
   { src: "/gallery/oil-pastel-3.jpg", title: "Golden Ridge" },
   { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
 ];
@@ -120,7 +120,7 @@ export default function GalleryPage() {
         {/* RIGHT: 2×2 grid (takes ~55%), SAME HEIGHT as left */}
        <div className="lg:col-span-6">
          <div className="grid h-[420px] md:h-[520px] lg:h-[var(--tile-h)] grid-cols-2 grid-rows-2 gap-3">
-            {thumbs.map((it) => (
+            {artworkThumbs.map((it) => (
               <Card key={it.src} item={it} className="h-full w-full" onClick={() => setSelectedItem(it)} />
             ))}
           </div>
