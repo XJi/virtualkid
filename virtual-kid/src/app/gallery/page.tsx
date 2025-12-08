@@ -22,7 +22,7 @@ const artworkThumbs: Item[] = [
   { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
 ];
 
-const tileHeight = '640px'; // <- adjust to taste (e.g., "560px", "720px")
+const tileHeight = '640px'; // Adjust this value to change the height of the mosaic tiles
 const mosaicStyle: CSSVars = { ['--tile-h']: tileHeight };
 
 /** Generic card with hover and proper object-fit */
