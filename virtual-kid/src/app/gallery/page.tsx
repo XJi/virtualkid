@@ -100,6 +100,24 @@ export default function GalleryPage() {
         <p className="text-slate-300/90 leading-relaxed">
           In my spare time, I love to experiment with color combinations and dynamics using oil pastels and watercolor.
         </p>
+        <div className="mt-3">
+          <a
+            href="https://www.instagram.com/_virtual.kid_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Instagram profile in new tab"
+            className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-white"
+          >
+            <Image
+              src="/Instagram_Glyph_Gradient.png"
+              alt="Instagram"
+              width={20}
+              height={20}
+              className="h-5 w-5 object-contain"
+            />
+            <span className="font-medium">@_virtual.kid_</span>
+          </a>
+        </div>
       </header>
       <hr className="border-white/10" />
 
