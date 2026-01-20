@@ -44,13 +44,13 @@ export default function AboutPage() {
         <li>• Explore new stuff on city walks</li>
         <li>• Try new food and restaurants 😋</li>
         <li>• Curious where the AI evolution will bring humanity to - it&apos;s a fun era to be alive</li>
-        <li>• When I&apos;m not shipping code, I&apos;m sketching neon cityscapes or planning the next trip</li>
+        <li>• When I&apos;m not shipping code, I&apos;m sketching neon cityscapes </li>
       </ul>
 
       <h3 className="mt-10 text-2xl font-bold">About this website</h3>
 
       <Callout>
-        Fun Fact: I completed 70%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. IYKYK 😉
+        Fun Fact: I completed 70%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. Also because I suck at frontend development lol. IYKYK 😉
       </Callout>
 
       <p className="mt-6 text-slate-300/90 leading-relaxed">
@@ -70,6 +70,24 @@ export default function AboutPage() {
           className="ml-2 inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 underline transition-colors"
         >
           Download My Full Profile: (PDF)
+        </a>
+      </p>
+      <p className={`${inter.className} mt-3 text-slate-300/90 leading-relaxed tracking-wide`}>
+        <a
+          href="https://www.linkedin.com/in/xiaojingji/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open LinkedIn profile in new tab"
+          className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-white"
+        >
+          <Image
+            src="/LI-In.png"
+            alt="LinkedIn"
+            width={20}
+            height={20}
+            className="h-5 w-5 object-contain"
+          />
+          Find me on LinkedIn
         </a>
       </p>
     </article>
