@@ -19,7 +19,7 @@ const artworkThumbs: Item[] = [
   { src: "/gallery/oil-pastel-1.jpeg", title: "Sunset Bay",description: "The gorgeous sunset of Pudget Sound, capturing the serene beauty of Pacific Northwest." },
   { src: "/gallery/oil-pastel-2.jpeg", title: "Neon Overlook", description: "Seattle glows at the edge of day, where sunset melts into the sea and the skyline shimmers like embers. The world feels suspended — warm, electric, and infinite beneath a sky of fire and rose." },
   { src: "/gallery/oil-pastel-3.jpg", title: "Golden Sunset from Los Angeles", description: "Bathed in the warm glow of a setting sun, where rolling hills meet sky, the city of Los Angeles blends into the horizon" },
-  { src: "/gallery/oil-pastel-4.jpg", title: "Fields of Color" },
+  { src: "/gallery/oil-pastel-4.jpg", title: "Steptoe Butte State Park", description: "Located in Washington state, this park has panoramic views of the surrounding farmlands and mountains, where the vast wheat fields stretch endlessly under a sky painted with the soft hues of dusk." },
 ];
 
 const tileHeight = '640px'; // Adjust this value to change the height of the mosaic tiles
