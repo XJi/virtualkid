@@ -45,9 +45,6 @@ export default function SiteHeader() {
         </div>
 
         <div className="ml-auto flex items-center gap-3">
-          <button aria-label="Toggle theme" className="hidden sm:inline rounded-xl border border-white/10 bg-slate-800/50 px-2 py-1">
-            🌙
-          </button>
 
           {/* Mobile hamburger */}
           <button
