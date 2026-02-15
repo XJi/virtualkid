@@ -98,7 +98,7 @@ export default function GalleryPage() {
           Art Gallery
         </h1>
         <p className="text-slate-300/90 leading-relaxed">
-          In my spare time, I love to experiment with color combinations and dynamics using oil pastels and watercolor.
+          My fun experiments with color combinations and dynamics using oil pastels and watercolor 🎨
         </p>
         <div className="mt-3">
           <a
