@@ -30,27 +30,27 @@ export default function AboutPage() {
         </div>
         <div className="text-sm">
           <div className="font-semibold">Xiaojing Ji</div>
-          <div className="text-slate-400">Updated {new Date().toLocaleDateString()}</div>
         </div>
       </div>
 
       {/* Introduction */}
       <p className={`${inter.className} mt-8 text-slate-300/90 leading-relaxed tracking-wide`}>
-        Hello! I&apos;m Xiaojing, a software developer and artist based in the Seattle Area. Obsseessed to drawing after 5, exposed to programming in PASCAL(yeah, it&apos;s fossil nowadays lol) and C back when I was 11. 
+      Hi! I&apos;m Xiaojing — software developer by day, neon city wanderer by night, based in the Seattle area.
+      Obsessed with drawing since I was 5, and started poking at programming at 11 — first in PASCAL (yes, ancient fossil energy 🦕) and then C. Guess I&apos;ve always liked building worlds, whether with pixels or pastels 🧪
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">What I&apos;m into</h2>
       <ul className={`${inter.className} mt-4 text-slate-300/90 leading-relaxed tracking-wide space-y-2`}>
-        <li>• Explore new stuff on city walks</li>
-        <li>• Try new food and restaurants 😋</li>
-        <li>• Curious where the AI evolution will bring humanity to - it&apos;s a fun era to be alive</li>
-        <li>• When I&apos;m not shipping code, I&apos;m sketching neon cityscapes </li>
+        <li>📍 Exploring city streets like they&apos;re open-world maps </li>
+        <li>😋 Trying new food like it&apos;s a research project  </li>
+        <li>✨ Watching AI evolve and wondering where this wild timeline takes humanity - it&apos;s a fun era to be alive </li>
+        <li>💜 Sketching neon-lit cityscapes that&apos;s like fantasy rendered in 4K  </li>
       </ul>
 
       <h3 className="mt-10 text-2xl font-bold">About this website</h3>
 
       <Callout>
-        Fun Fact: I completed 70%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. Also because I suck at frontend development lol. IYKYK 😉
+        I completed 70%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. Also because I suck at frontend development lol. IYKYK 😝
       </Callout>
 
       <p className="mt-6 text-slate-300/90 leading-relaxed">
