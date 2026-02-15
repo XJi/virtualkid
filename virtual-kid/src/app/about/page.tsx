@@ -44,7 +44,7 @@ export default function AboutPage() {
         <li>📍 Exploring city streets like they&apos;re open-world maps </li>
         <li>😋 Trying new food like it&apos;s a research project  </li>
         <li>✨ Watching AI evolve and wondering where this wild timeline takes humanity - it&apos;s a fun era to be alive </li>
-        <li>💜 Sketching neon-lit cityscapes that&apos;s like fantasy rendered in 4K  </li>
+        <li>💜 Sketching neon-lit cityscapes like fantasy rendered in 4K  </li>
       </ul>
 
       <h3 className="mt-10 text-2xl font-bold">About this website</h3>
