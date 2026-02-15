@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           {/* CTA */}
-          <div className="mt-8">
+          <div className="mt-8 ml-auto">
             <a
               href="/gallery"
               className="inline-flex items-center justify-center rounded-xl bg-fuchsia-600 px-5 py-3 font-semibold text-white shadow-lg shadow-fuchsia-600/20 transition hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/60"
