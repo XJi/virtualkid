@@ -26,7 +26,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         <Link href="/" className="text-2xl font-extrabold tracking-tight">
-          Xiaojing<span className="text-fuchsia-400">•</span>Ji
+          <span className="text-fuchsia-400">• </span> Xiaojing Ji
         </Link>
 
         {/* Desktop nav */}
