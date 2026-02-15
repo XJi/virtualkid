@@ -20,7 +20,7 @@ export default function AboutPage() {
     <article className="mx-auto max-w-3xl px-4 py-10">
       {/* Title */}
       <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-        About Me
+        README
       </h1>
 
       {/* Author row */}
