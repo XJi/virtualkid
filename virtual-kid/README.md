@@ -1,36 +1,242 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Virtual Kid — Portfolio & Creative Showcase
 
-## Getting Started
+A fast, modern portfolio and blog site built with **Next.js 15** featuring artwork and experiments at the intersection of design and code. Deployed as a static export with zero external APIs.
 
-First, run the development server:
+## 🎨 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Static Site Export**: Built as pure HTML/CSS/JS with no server runtime (perfect for fast hosting)
+- **Responsive Design**: Mobile-first approach with Tailwind v4 styling
+- **Interactive Components**:
+  - Typewriter effect for animated text with emoji support
+  - Image carousel gallery with lightbox modal
+  - Smooth navigation with active link highlighting
+- **Fast Build Times**: Powered by Turbopack for rapid iteration
+- **Dark Theme**: Modern slate-based color scheme with fuchsia accents
+- **Full TypeScript**: Strict type checking for code safety
+- **Accessibility**: Respects `prefers-reduced-motion` and includes semantic HTML
+
+## 🗂️ Project Structure
+
+```
+src/app/
+├── page.tsx                    # Home page (hero section)
+├── layout.tsx                  # Root layout wrapper
+├── globals.css                 # Tailwind & global styles
+├── about/page.tsx              # About page
+├── gallery/page.tsx            # Image gallery showcase
+├── writing/page.tsx            # Blog/writing archive
+└── components/
+    ├── SiteHeader.tsx          # Navigation (with mobile menu)
+    ├── Carousel.tsx            # Image gallery carousel
+    └── Typewriter.tsx          # Text animation component
+public/
+├── gallery/                    # Gallery images
+├── hero-studio.jpg             # Hero section image
+├── avatar.jpg                  # Profile avatar
+└── LI-In.png                   # LinkedIn icon
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+```bash
+# Clone the repository
+git clone https://github.com/XJi/virtualkid.git
+cd virtual-kid
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Start dev server with hot reload (Turbopack)
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser. Changes auto-reload as you edit files.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Build & Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Create static export build
+npm run build
+
+# Test the production build locally
+npm start
+```
+
+The `build` command generates static files in the `.next/out` directory ready for deployment.
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## 🎯 Key Technologies
+
+| Tech | Version | Purpose |
+|------|---------|---------|
+| **Next.js** | 15.5.2 | React framework with App Router |
+| **React** | 19.1.0 | UI library |
+| **Tailwind CSS** | 4.1.12 | Utility-first styling |
+| **TypeScript** | 5 | Type safety |
+| **Turbopack** | Built-in | Fast bundler |
+
+## 🧩 Component Guide
+
+### `SiteHeader.tsx`
+Navigation bar with:
+- Active link detection via `usePathname()`
+- Mobile hamburger menu (hidden on desktop)
+- Theme toggle placeholder
+- Body overflow control for mobile
+
+**Usage**: Auto-imported in layout, no manual setup needed.
+
+### `Carousel.tsx`
+Image gallery with:
+- Horizontal scrolling with prev/next buttons
+- Lightbox modal for full-screen viewing
+- Responsive card sizing via ResizeObserver
+- Configurable aspect ratio (default: `2 / 3`)
+
+**Props**:
+```typescript
+type CarouselProps = {
+  items: Array<{ src: string; alt?: string; caption?: string }>;
+  aspectRatio?: string; // e.g., "2 / 3", "16 / 9"
+};
+```
+
+### `Typewriter.tsx`
+Character-by-character text animation:
+- Respects `prefers-reduced-motion` for accessibility
+- Configurable speed and punctuation pauses
+- Unicode-aware (handles emojis correctly)
+- Blinking cursor option
+
+**Props**:
+```typescript
+type TypewriterProps = {
+  text: string;
+  speed?: number;        // ms per character (default: 24)
+  startDelay?: number;   // ms before typing starts (default: 300)
+  cursor?: boolean;      // show blinking cursor (default: true)
+  className?: string;
+  punctuationPauses?: Record<string, number>; // pause times
+};
+```
+
+## 🎨 Styling & Theme
+
+### Color Scheme
+- **Background**: `slate-950` (dark)
+- **Text**: `slate-100` (light gray)
+- **Accents**: Fuchsia (`#f0f9ff` to `fuchsia-600`)
+- **Success**: Emerald green (callout boxes)
+
+### Responsive Breakpoints
+- Mobile-first design
+- `md:` for tablets/desktops (768px+)
+- `lg:` for larger layouts (1024px+)
+
+### Layout
+- Max-width container: `max-w-6xl`
+- Consistent padding: `px-4 py-10`
+- Tailwind v4 imported via `@import "tailwindcss"` in globals.css
+
+## 🖼️ Adding Content
+
+### Gallery Images
+Edit [src/app/gallery/page.tsx](src/app/gallery/page.tsx):
+```tsx
+const items = [
+  { src: '/gallery/image1.jpg', alt: 'Description', caption: 'Title' },
+  { src: '/gallery/image2.jpg', alt: 'Description' },
+  // ...
+];
+```
+
+Place images in `/public/gallery/`.
+
+### New Pages
+1. Create `src/app/{route}/page.tsx`
+2. Export default component
+3. Layout auto-applies via `layout.tsx`
+4. Update `SiteHeader` links array
+
+### Styling Components
+```tsx
+<div className="bg-slate-900 text-slate-100 hover:bg-fuchsia-600">
+  Content with dark theme & fuchsia hover
+</div>
+```
+
+## 🔧 Configuration
+
+### Next.js Config
+[next.config.ts](next.config.ts):
+- `output: "export"` — static HTML/CSS/JS only
+- `images.unoptimized: true` — no image optimization (static export requirement)
+- Path alias: `@/*` maps to `src/*`
+
+### TypeScript
+[tsconfig.json](tsconfig.json):
+- Strict mode enabled (`"strict": true`)
+- Target: ES2020
+- Module: ESNext
+
+## 📱 Deployment
+
+Recommended for **AWS Amplify** (zero-config static hosting):
+
+```bash
+npm run build
+# Deploy the `.next/out` directory
+```
+
+Also works on:
+- Vercel (automatic)
+- GitHub Pages
+- Netlify
+- Any static file host
+
+## 🎯 Development Workflow
+
+1. **Edit files** → Changes auto-reload via Turbopack
+2. **Test responsive** → DevTools device emulation
+3. **Lint code** → `npm run lint`
+4. **Build** → `npm run build`
+5. **Preview** → `npm start`
+6. **Deploy** → Push `.next/out` to hosting
+
+## 🤔 Accessibility
+
+- ✅ Semantic HTML (`<nav>`, `<main>`, `<article>`, etc.)
+- ✅ ARIA labels on interactive elements
+- ✅ Focus rings via Tailwind (`focus:ring-*`)
+- ✅ Respects `prefers-reduced-motion` for animations
+- ✅ Image alt text required
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com)
+- [React 19 Release Notes](https://react.dev)
+- [Turbopack](https://turbo.build/pack)
+
+## 📄 License
+
+Personal portfolio project. Use for inspiration, but respect copyright on artwork and code.
+
+---
+
+Built with vibe coding energy 🧪✨
