@@ -150,7 +150,7 @@ Also works on:
 
 ## 📄 License
 
-Personal portfolio project. Use for inspiration, but respect copyright on artwork and code.
+Personal portfolio project. Use for inspiration, but respect copyright on artwork and code. IT'S All V̷I̷R̷T̷U̷A̷L̷K̷I̷D̷ XIAOJING'S ARTWORK!
 
 ---
 
