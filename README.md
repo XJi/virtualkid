@@ -4,7 +4,7 @@ A fast, modern portfolio and blog site built with **Next.js 15** featuring artwo
 
 🌐 Check out https://www.jixiaojing.com/ to visit my site! 
 🚀 The site is hosted and deployed on AWS Amplify.
-</> Code package under /virtual-kid has REDME.md with more project and structure specifics.
+🤖 Code package under /virtual-kid has REDME.md with more project and structure specifics.
  
 
 ## 🎨 Features
