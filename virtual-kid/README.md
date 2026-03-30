@@ -235,7 +235,9 @@ Also works on:
 
 ## 📄 License
 
-Personal portfolio project. Use for inspiration, but respect copyright on artwork and code.
+Personal portfolio project. Use for inspiration, but respect copyright on artwork and code. IT'S All L̶E̶G̶E̶N̶D̶A̶R̶Y̶ ̶V̶I̶R̶T̶U̶A̶L̶K̶I̶D̶ XIAOJING'S ARTWORK!
+
+
 
 ---
 
