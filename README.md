@@ -2,9 +2,9 @@
 
 A fast, modern portfolio and blog site built with **Next.js 15** featuring artwork and experiments at the intersection of design and code. Deployed as a static export with zero external APIs.
 
-🌐 Check out https://www.jixiaojing.com/ to visit my site! 
-🚀 The site is hosted and deployed on AWS Amplify.
-🤖 Code package under /virtual-kid has REDME.md with more project and structure specifics.
+- 🌐 Check out https://www.jixiaojing.com/ to visit my site! 
+- 🚀 The site is hosted and deployed on AWS Amplify.
+- 🤖 Code package under /virtual-kid has REDME.md with more project and structure specifics.
  
 
 ## 🎨 Features
