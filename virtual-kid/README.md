@@ -8,7 +8,9 @@ A fast, modern portfolio and blog site built with **Next.js 15** featuring artwo
 - **Responsive Design**: Mobile-first approach with Tailwind v4 styling
 - **Interactive Components**:
   - Typewriter effect for animated text with emoji support
-  - Image carousel gallery with lightbox modal
+  - Mosaic gallery layout (`Card`) with full-width caption overlays + click-to-zoom lightbox
+  - Horizontal carousel for landscape work — chromeless header, keyboard arrows, scroll-snap, progress dots
+  - Instagram pill link in the gallery hero, paired with a "What's in here" summary card
   - Smooth navigation with active link highlighting
 - **Fast Build Times**: Powered by Turbopack for rapid iteration
 - **Dark Theme**: Modern slate-based color scheme with fuchsia accents
@@ -30,10 +32,12 @@ src/app/
     ├── Carousel.tsx            # Image gallery carousel
     └── Typewriter.tsx          # Text animation component
 public/
-├── gallery/                    # Gallery images
-├── hero-studio.jpg             # Hero section image
-├── avatar.jpg                  # Profile avatar
-└── LI-In.png                   # LinkedIn icon
+├── gallery/                          # Gallery images (oil pastels + watercolors)
+├── hero-studio.jpg                   # Hero section image
+├── avatar.jpg                        # Profile avatar
+├── Instagram_Glyph_Gradient.png      # Gradient Instagram glyph (gallery link)
+├── LI-In.png                         # LinkedIn icon
+└── Xiaojing-Ji-2025-Resume.pdf       # Downloadable resume (linked from About)
 ```
 
 ## 🚀 Getting Started
@@ -102,19 +106,33 @@ Navigation bar with:
 **Usage**: Auto-imported in layout, no manual setup needed.
 
 ### `Carousel.tsx`
-Image gallery with:
-- Horizontal scrolling with prev/next buttons
-- Lightbox modal for full-screen viewing
-- Responsive card sizing via ResizeObserver
+Chromeless horizontal carousel used by the gallery's landscape section:
+- Visible header (title + "Swipe →" pill) was intentionally removed; progress is exposed as `sr-only` text for screen readers
+- Prev/next buttons rendered as floating circles overlaying the track edges
+- `ArrowLeft` / `ArrowRight` keyboard navigation when the section is focused
+- CSS scroll-snap track (`snap-x snap-mandatory`) with smooth scrolling
+- Progress dots (active dot widens to a fuchsia bar)
+- Click any tile to open a full-screen lightbox (Esc to close)
+- Responsive card sizing via `ResizeObserver`
 - Configurable aspect ratio (default: `2 / 3`)
 
 **Props**:
 ```typescript
 type CarouselProps = {
   items: Array<{ src: string; alt?: string; caption?: string }>;
-  aspectRatio?: string; // e.g., "2 / 3", "16 / 9"
+  title?: string;     // used as aria-label only (no longer rendered)
+  className?: string;
+  aspect?: string;    // e.g., "4 / 5", "2 / 3", "16 / 9"
 };
 ```
+
+### `Card` (in `gallery/page.tsx`)
+Local component used to render the mosaic tiles above the carousel:
+- Full-bleed image with `object-cover` and a subtle hover scale
+- Caption overlay anchored to the bottom edge, full image width, with a gradient fade so the title/description stay readable without obscuring the art
+- Optional `onClick` → opens the page-level lightbox
+
+**Item schema**: `{ src: string; title: string; description?: string }`
 
 ### `Typewriter.tsx`
 Character-by-character text animation:
@@ -156,11 +174,26 @@ type TypewriterProps = {
 ## 🖼️ Adding Content
 
 ### Gallery Images
-Edit [src/app/gallery/page.tsx](src/app/gallery/page.tsx):
+[src/app/gallery/page.tsx](src/app/gallery/page.tsx) has two separate datasets:
+
+**Mosaic tiles** (large featured tile + 2×2 thumbnail grid) — uses the local `Card` schema:
 ```tsx
-const items = [
-  { src: '/gallery/image1.jpg', alt: 'Description', caption: 'Title' },
-  { src: '/gallery/image2.jpg', alt: 'Description' },
+const artStudio: Item = {
+  src: '/gallery/tokyo-tower.jpg',
+  title: 'Studio Desk',
+  description: 'A quiet corner of the studio…',
+};
+
+const artworkThumbs: Item[] = [
+  { src: '/gallery/oil-pastel-1.jpeg', title: 'Sunset Bay', description: '…' },
+  // ...
+];
+```
+
+**Carousel reel** (landscape section) — uses the `Carousel` schema; `caption` supports a `\n` to split title and description:
+```tsx
+const carouselItems = [
+  { src: '/gallery/watercolor-1.jpeg', caption: 'Whispers Over The Bay\nSan Francisco is a feeling…' },
   // ...
 ];
 ```

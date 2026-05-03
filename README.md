@@ -13,7 +13,9 @@ A fast, modern portfolio and blog site built with **Next.js 15** featuring artwo
 - **Responsive Design**: Mobile-first approach with Tailwind v4 styling
 - **Interactive Components**:
   - Typewriter effect for animated text with emoji support
-  - Image carousel gallery with lightbox modal
+  - Mosaic gallery layout with full-width caption overlays and a click-to-zoom lightbox
+  - Horizontal carousel (cleaned-up chrome — keyboard arrows, scroll-snap, progress dots) for landscape work
+  - Instagram pill link with gradient glyph in the gallery hero
   - Smooth navigation with active link highlighting
 - **Fast Build Times**: Powered by Turbopack for rapid iteration
 - **Dark Theme**: Modern slate-based color scheme with fuchsia accents
@@ -35,10 +37,11 @@ virtual-kid/src/app/
     ├── Carousel.tsx            # Image gallery carousel
     └── Typewriter.tsx          # Text animation component
 virtual-kid/public/
-├── gallery/                    # Gallery images
-├── hero-studio.jpg             # Hero section image
-├── avatar.jpg                  # Profile avatar
-└── LI-In.png                   # LinkedIn icon
+├── gallery/                          # Gallery images (oil pastels + watercolors)
+├── hero-studio.jpg                   # Hero section image
+├── avatar.jpg                        # Profile avatar
+├── Instagram_Glyph_Gradient.png      # Gradient Instagram glyph (gallery link)
+└── LI-In.png                         # LinkedIn icon
 ```
 
 ## 🚀 Getting Started
