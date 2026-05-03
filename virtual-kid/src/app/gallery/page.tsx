@@ -91,10 +91,10 @@ export default function GalleryPage() {
         <div className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_24px_80px_-35px_rgba(15,23,42,0.88)]">
           <div className="grid gap-6 lg:grid-cols-[2.4fr_1fr] lg:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-300/80">Gallery studio</p>
-              <h1 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">A darker gallery for color, contrast, and texture.</h1>
+              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-300/80">The sketchbook</p>
+              <h1 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">Wonders & Wanders</h1>
               <p className="mt-4 max-w-3xl text-slate-300/90 leading-relaxed text-base md:text-lg">
-                Explore recent oil pastel and watercolor work through a layout built for discovery. Hover, tap, and scroll to reveal the quiet energy in every piece.
+                Mostly oil pastels and watercolors I make when a city sunset refuses to be ignored ✨ Each piece is a small mood from somewhere I wandered — hover, tap, scroll, and let your eyes wander too.
               </p>
               <div className="mt-6 inline-flex flex-wrap items-center gap-3 text-sm">
                 <a
@@ -109,11 +109,10 @@ export default function GalleryPage() {
               </div>
             </div>
             <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 text-sm text-slate-300 shadow-xl shadow-black/30">
-              <p className="text-fuchsia-200 uppercase tracking-[0.2em] text-[0.65rem]">Featured experience</p>
+              <p className="text-fuchsia-200 uppercase tracking-[0.2em] text-[0.65rem]">What&apos;s in here</p>
               <ul className="mt-4 space-y-3 [&_li]:leading-relaxed">
-                <li>• Gesture-rich mosaic with layered proportions</li>
-                <li>• Focusable carousel with navigation and progress</li>
-                <li>• Immersive full-screen lightbox viewing</li>
+                <li>• A mosaic of artworks since 2020 🎨</li>
+                <li>• A reel of landscape views 🌆</li>
               </ul>
             </div>
           </div>
@@ -138,8 +137,8 @@ export default function GalleryPage() {
       <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_20px_70px_-25px_rgba(15,23,42,0.85)]">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-white">Skyline Daydreams in Technicolor</h2>
-            <p className="mt-2 max-w-2xl text-slate-400">A wandering reel of cityscapes, neon horizons, and color-soaked skylines — each one a small love letter to the places that hum after dark.</p>
+            <h2 className="text-2xl font-semibold text-white">Dispatches from the Color Lab</h2>
+            <p className="mt-2 max-w-2xl text-slate-400">A wandering reel of cityscapes, neon horizons, and color-soaked skylines 💜</p>
           </div>
         </div>
         <div className="mt-6">
