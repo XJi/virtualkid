@@ -135,44 +135,11 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-[1.5fr_1fr]">
-        <div className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_28px_80px_-35px_rgba(15,23,42,0.88)]">
-          <div className="inline-flex items-center gap-2 rounded-full bg-fuchsia-500/10 px-3 py-1 text-xs uppercase tracking-[0.22em] text-fuchsia-200/90">
-            Featured collection
-          </div>
-          <h2 className="mt-4 text-2xl font-semibold text-white">Three new studio scenes</h2>
-          <p className="mt-3 text-slate-300/80 leading-relaxed">
-            These smaller cards let you jump directly into the pieces that best capture mood, color, and atmosphere.
-          </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {artworkThumbs.slice(0, 2).map((item) => (
-              <button
-                key={item.src}
-                onClick={() => setSelectedItem(item)}
-                className="group flex items-center gap-4 rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-4 text-left transition hover:-translate-y-1 hover:bg-slate-900/90"
-              >
-                <div className="grid h-16 w-16 place-items-center rounded-3xl bg-slate-800/80 text-slate-200">
-                  <span className="text-xl">🎨</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{item.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.description}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-      </section>
-
       <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_20px_70px_-25px_rgba(15,23,42,0.85)]">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-white">More works</h2>
-            <p className="mt-2 max-w-2xl text-slate-400">Swipe through a layered collection of smaller studies, each with its own atmosphere and narrative.</p>
-          </div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-fuchsia-500/10 px-3 py-1 text-xs uppercase tracking-[0.22em] text-fuchsia-200/90">
-            Interactive carousel · Lightbox ready
+            <h2 className="text-2xl font-semibold text-white">Skyline Daydreams in Technicolor</h2>
+            <p className="mt-2 max-w-2xl text-slate-400">A wandering reel of cityscapes, neon horizons, and color-soaked skylines — each one a small love letter to the places that hum after dark.</p>
           </div>
         </div>
         <div className="mt-6">
