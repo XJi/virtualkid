@@ -48,11 +48,9 @@ function Card({
         sizes="(min-width:1024px) 40vw, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
-      <div className="pointer-events-none hidden sm:flex absolute inset-x-4 bottom-4 w-[calc(100%-2rem)] rounded-3xl bg-slate-950/70 px-4 py-3 backdrop-blur-sm text-slate-100 shadow-lg shadow-black/20 opacity-90 transition-transform duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        <div>
-          <p className="text-sm font-semibold">{item.title}</p>
-          {item.description && <p className="mt-1 text-xs leading-5 text-slate-300/90 line-clamp-2">{item.description}</p>}
-        </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/70 to-transparent px-4 py-3 text-slate-100 backdrop-blur-[2px]">
+        <p className="text-sm font-semibold">{item.title}</p>
+        {item.description && <p className="mt-1 text-xs leading-5 text-slate-300/90 line-clamp-2">{item.description}</p>}
       </div>
     </figure>
   );
@@ -94,26 +92,38 @@ export default function GalleryPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-300/80">The sketchbook</p>
               <h1 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">Wonders & Wanders</h1>
               <p className="mt-4 max-w-3xl text-slate-300/90 leading-relaxed text-base md:text-lg">
-                Mostly oil pastels and watercolors I make when a city sunset refuses to be ignored ✨ Each piece is a small mood from somewhere I wandered — hover, tap, scroll, and let your eyes wander too.
+                Mostly oil pastels and watercolors ✨ Each piece is a snapshot of moment from somewhere I wandered — hover, tap, scroll, and let your eyes wander too.
               </p>
-              <div className="mt-6 inline-flex flex-wrap items-center gap-3 text-sm">
-                <a
-                  href="https://www.instagram.com/_virtual.kid_/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-slate-100 transition hover:bg-slate-900/90"
-                >
-                  <span className="text-fuchsia-300">@_virtual.kid_</span>
-                  <span className="text-slate-400">Instagram</span>
-                </a>
-              </div>
             </div>
-            <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 text-sm text-slate-300 shadow-xl shadow-black/30">
-              <p className="text-fuchsia-200 uppercase tracking-[0.2em] text-[0.65rem]">What&apos;s in here</p>
-              <ul className="mt-4 space-y-3 [&_li]:leading-relaxed">
-                <li>• A mosaic of artworks since 2020 🎨</li>
-                <li>• A reel of landscape views 🌆</li>
-              </ul>
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://www.instagram.com/_virtual.kid_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open @_virtual.kid_ on Instagram"
+                className="group flex w-full items-center gap-3 rounded-[1.75rem] border border-white/10 bg-slate-900/70 py-2 pl-2 pr-4 text-sm text-slate-100 shadow-sm shadow-black/20 transition hover:border-white/20 hover:bg-slate-900/90"
+              >
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 transition group-hover:ring-white/20">
+                  <Image
+                    src="/Instagram_Glyph_Gradient.png"
+                    alt=""
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px] object-contain"
+                  />
+                </span>
+                <span className="flex flex-col leading-tight">
+                  <span className="font-medium text-slate-100">@_virtual.kid_</span>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Follow on Instagram</span>
+                </span>
+              </a>
+              <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/80 px-6 py-4 text-sm text-slate-300 shadow-xl shadow-black/30">
+                <p className="text-fuchsia-200 uppercase tracking-[0.2em] text-[0.65rem]">What&apos;s in here</p>
+                <ul className="mt-2 space-y-1.5 [&_li]:leading-relaxed">
+                  <li>• A mosaic of artworks since 2020 🎨</li>
+                  <li>• A reel of landscape views 🌆</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

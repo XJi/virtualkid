@@ -92,16 +92,7 @@ export default function Carousel({
 
   return (
     <section role="region" aria-label={title} tabIndex={0} onKeyDown={onKeyDown} className={`relative ${className}`}>
-      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h3 className="text-base font-semibold text-white">{title}</h3>
-          <p className="mt-1 text-sm text-slate-400" aria-live="polite">{progressLabel}</p>
-        </div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-xs uppercase tracking-[0.22em] text-slate-300 shadow-sm shadow-black/20">
-          <span>Swipe</span>
-          <span>→</span>
-        </div>
-      </div>
+      <p className="sr-only" aria-live="polite">{progressLabel}</p>
 
       <div ref={trackRef} className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-1 py-1">
         {data.map((it, i) => (
