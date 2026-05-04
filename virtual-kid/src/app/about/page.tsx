@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] }); // paragraphs use this
 
 function Callout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 rounded-xl border border-emerald-400/20 bg-emerald-700/30 p-4 text-emerald-100">
+    <div className="mt-6 rounded-xl border border-fuchsia-300/70 bg-fuchsia-400/60 p-4 text-fuchsia-50">
       <div className="flex items-start gap-3">
         <span className="mt-0.5">💡</span>
         <div className={`${inter.className} leading-relaxed`}>{children}</div>
@@ -50,7 +50,7 @@ export default function AboutPage() {
       <h3 className="mt-10 text-2xl font-bold">About this website</h3>
 
       <Callout>
-        I completed 70%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. Also because I suck at frontend development lol. IYKYK 😝
+        I completed 90%+ of this website with vibe coding :p. Quite a fun experiment in rapid prototyping and iterative design. Also because I suck at frontend development lol. IYKYK 😝
       </Callout>
 
       <p className="mt-6 text-slate-300/90 leading-relaxed">
