@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Carousel from '../components/Carousel';
+import ZoomInIcon from '../components/icons/ZoomInIcon';
 import { useState, useEffect, type CSSProperties } from 'react';
 
 type CSSVars = CSSProperties & { ['--tile-h']?: string };
@@ -11,7 +12,7 @@ type Item = { src: string; title: string; description?: string };
 const artStudio: Item = {
   src: "/gallery/tokyo-tower.jpg",
   title: "Studio Desk",
-  description: "A quiet corner of the studio where texture, light, and the first sketch lines come together.",
+  description: "Tokyo Tower (04/2025) - Where texture, light, and sketch lines come together.",
 };
 
 const artworkThumbs: Item[] = [
@@ -48,9 +49,17 @@ function Card({
         sizes="(min-width:1024px) 40vw, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/70 to-transparent px-4 py-3 text-slate-100 backdrop-blur-[2px]">
-        <p className="text-sm font-semibold">{item.title}</p>
-        {item.description && <p className="mt-1 text-xs leading-5 text-slate-300/90 line-clamp-2">{item.description}</p>}
+      {onClick && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute top-3 right-3 grid h-9 w-9 place-items-center text-slate-100 transition duration-300 group-hover:scale-110"
+        >
+          <ZoomInIcon className="h-5 w-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.65)]" />
+        </span>
+      )}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 to-transparent px-4 pt-3 pb-1.5 text-slate-100 backdrop-blur-[1px]">
+        <p className="text-sm font-semibold leading-tight">{item.title}</p>
+        {item.description && <p className="mt-0.5 text-[11px] leading-snug text-slate-300/90 line-clamp-2">{item.description}</p>}
       </div>
     </figure>
   );
