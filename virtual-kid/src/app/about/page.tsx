@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] }); // paragraphs use this
 
 function Callout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 rounded-xl border border-fuchsia-300/70 bg-fuchsia-400/60 p-4 text-fuchsia-50">
+    <div className="mt-6 rounded-xl border border-fuchsia-300/70 bg-fuchsia-400/50 p-4 text-fuchsia-50">
       <div className="flex items-start gap-3">
         <span className="mt-0.5">💡</span>
         <div className={`${inter.className} leading-relaxed`}>{children}</div>

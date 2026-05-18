@@ -8,7 +8,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/writing', label: 'Archive' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'README' },
 ];
 
 export default function SiteHeader() {
