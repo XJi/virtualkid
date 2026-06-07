@@ -23,7 +23,7 @@ const latestArtwork = {
   intro:
     "Los Angeles wears its sunsets like a slow exhale — palm silhouettes drifting against a sky that burns from coral into lavender. This piece chases that golden hush, when the city softens and the light feels close enough to touch.",
   medium: "Oil pastel on paper",
-  dimensions: "9 × 12 in",
+  dimensions: "5 × 8 in",
   inspiration:
     "A late drive down the coast as the sun melted into the Pacific, painting every rooftop and palm in molten gold.",
   howTo: {
@@ -34,33 +34,33 @@ const latestArtwork = {
       "Colorless blender pen",
       "Paper stump & tortillon",
       "Cold-press pastel paper",
-      "Kneaded eraser",
+      "Palette knife",
     ],
     steps: [
       {
         title: "Block in the horizon",
         body:
-          "Lightly pencil the horizon line and palm silhouettes — no details, just shapes. Keep the sun a touch off-center for a more cinematic frame.",
+          "Lightly pencil the horizon line without details, just to get the idea where to color and blend the sky.",
       },
       {
-        title: "Lay the warm base",
+        title: "Lay and blend the warm sky",
         body:
-          "Pull broad horizontal strokes from the horizon up — pale yellow at the sun, then peach, coral, and a warm lavender as you climb. Don't worry about smoothness yet; coverage first.",
+          "Pull broad horizontal strokes from the horizon up — pale yellow at the sun, then peach, coral, and a warm lavender as you climb. After the full sky coverage, use blending sticks to gently soften the transitions and create the smooth gradient.",
       },
       {
-        title: "Blend the sky soft",
+        title: "Shape the buildings with blue tones",
         body:
-          "Sweep a colorless blender pen along each color band so the edges melt together. Finish with a paper stump in tight circles around the sun's halo for that glowing falloff.",
+          "Draw in the building shapes with blue gray, haze blue, prussian blue, and dark violet pastels. Blend lightly with the colorless blender to soften them, but keep the edges defined enough that they read as structures.",
       },
       {
         title: "Push the hot core",
         body:
-          "Layer hotter magenta and burnt orange right at the horizon, then re-blend. The trick is contrast — the brighter that core glows, the more the upper sky reads as twilight.",
+          "Layer hotter magenta, burnt orange, lavender purple right at the horizon for tall buildings shape, then re-blend. The color constrast with the upper sky reads as twilight.",
       },
       {
         title: "Drop the silhouettes",
         body:
-          "Press deep plum or near-black for palm trunks and rooftops last, so they sit cleanly on the gradient. Keep strokes confident — silhouettes don't need texture, just shape.",
+          "Press deep plum or near-black for palm trunks and rooftops last, so they sit cleanly on the gradient. On the silhouettes, layer a bit orange pastel into the edges and use palette knife carve thin lines for palm leaves texture.",
       },
       {
         title: "Final highlights",
