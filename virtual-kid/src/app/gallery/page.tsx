@@ -401,20 +401,16 @@ export default function GalleryPage() {
             ×
           </button>
           <div
-            className="relative max-w-6xl w-full flex flex-col bg-slate-900/95 rounded-2xl overflow-hidden"
+            className="relative w-full max-w-6xl flex flex-col md:w-auto md:flex-row bg-slate-900/95 rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full h-[60vh] md:h-[70vh]">
-              <Image
-                src={selectedItem.src}
-                alt={selectedItem.title}
-                fill
-                sizes="90vw"
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="bg-slate-900/95 backdrop-blur-sm p-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={selectedItem.src}
+              alt={selectedItem.title}
+              className="block w-full max-h-[55vh] object-contain md:h-[80vh] md:max-h-[80vh] md:w-auto"
+            />
+            <div className="w-full shrink-0 bg-slate-900/95 backdrop-blur-sm p-6 md:w-80 md:max-h-[80vh] md:overflow-y-auto">
               <p className="text-lg font-semibold text-slate-200">
                 {selectedItem.title}
               </p>
