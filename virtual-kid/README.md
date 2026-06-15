@@ -37,7 +37,7 @@ public/
 ├── avatar.jpg                        # Profile avatar
 ├── Instagram_Glyph_Gradient.png      # Gradient Instagram glyph (gallery link)
 ├── LI-In.png                         # LinkedIn icon
-└── Xiaojing-Ji-2025-Resume.pdf       # Downloadable resume (linked from About)
+└── Xiaojing-Ji-2026-Resume.pdf       # Downloadable resume (linked from About)
 ```
 
 ## 🚀 Getting Started

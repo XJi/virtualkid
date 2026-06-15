@@ -192,7 +192,7 @@ export default function GalleryPage() {
                 </span>
                 <span className="flex flex-col leading-tight">
                   <span className="font-medium text-slate-100">@_virtual.kid_</span>
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Follow on Instagram</span>
+                  <span className="mt-1.5 text-[9px] uppercase tracking-[0.2em] text-slate-400">Follow on Instagram</span>
                 </span>
               </a>
               <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/80 px-6 py-4 text-sm text-slate-300 shadow-xl shadow-black/30">
@@ -222,7 +222,7 @@ export default function GalleryPage() {
               className="w-full shrink-0"
               aria-hidden={latestPage !== 0}
             >
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_1fr] lg:items-center">
+              <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_1fr] lg:items-start">
                 <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[1.5rem] border border-white/10 lg:max-w-none">
                   <Image
                     src={latestArtwork.src}
