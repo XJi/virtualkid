@@ -152,6 +152,7 @@ export default function GalleryPage() {
   }, [selectedItem]);
 
   const carouselItems = [
+    { src: '/gallery/oil-pastel-12.jpeg', caption: 'Ember Fields\nBeneath a sky alive with fire, wildflowers glow across the quiet earth.' },
     { src: '/gallery/watercolor-1.jpeg', caption: 'Whispers Over The Bay\nSan Francisco is a feeling, a moment between sips of coffee, between light and mist.' },
     { src: '/gallery/oil-pastel-5.jpg', caption: 'Rosey Skyline\nDawn melts into morning through a veil of quiet color, where the horizon glows from within.' },
     { src: '/gallery/oil-pastel-6.jpeg', caption: 'City Between Clouds\nA skyline softened by lavender mist, where the city becomes a waking dream.' },
