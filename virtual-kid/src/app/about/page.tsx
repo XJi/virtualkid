@@ -15,11 +15,31 @@ function Callout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Vital({ label, value }: { label: string; value: string }) {
+function LogEntry({
+  tag,
+  children,
+  active = false,
+}: {
+  tag: string;
+  children: React.ReactNode;
+  active?: boolean;
+}) {
   return (
     <div>
-      <dt className="text-[10px] uppercase tracking-[0.2em] text-fuchsia-300/80">{label}</dt>
-      <dd className={`${inter.className} mt-0.5 text-sm text-slate-200`}>{value}</dd>
+      <dt
+        className={`flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] ${
+          active ? "text-emerald-300/90" : "text-fuchsia-300/80"
+        }`}
+      >
+        {active && (
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          </span>
+        )}
+        {tag}
+      </dt>
+      <dd className={`${inter.className} mt-0.5 text-sm text-slate-200`}>{children}</dd>
     </div>
   );
 }
@@ -79,9 +99,9 @@ export default function AboutPage() {
             </div>
 
             <dl className="mt-6 space-y-4">
-              <Vital label="Started coding" value="PASCAL, age 11 🦕" />
-              <Vital label="Started drawing" value="Age 5" />
-              <Vital label="Mediums" value="Oil pastel & watercolor" />
+              <LogEntry tag="v0.1 — age 5">Discovered crayons. Never looked back.</LogEntry>
+              <LogEntry tag="v1.0 — age 11">First compile: PASCAL 🦕 (yes, before Git existed)</LogEntry>
+              <LogEntry tag="now running" active>Oil pastel &amp; watercolor build 🎨</LogEntry>
             </dl>
 
             <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-5">
