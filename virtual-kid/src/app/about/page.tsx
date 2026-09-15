@@ -25,7 +25,7 @@ export default function AboutPage() {
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_300px]">
         {/* Main column */}
-        <div className="lg:order-1">
+        <div className="order-2 lg:order-1">
           {/* Introduction */}
           <p className={`${inter.className} text-slate-300/90 leading-relaxed tracking-wide`}>
             Hi! I&apos;m Xiaojing — software developer by day, neon city wanderer by night.
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </div>
 
         {/* Sidebar: profile / quick facts card */}
-        <aside className="lg:order-2 lg:sticky lg:top-24 h-fit">
+        <aside className="order-1 lg:order-2 lg:sticky lg:top-24 h-fit">
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl shadow-black/20">
             <div className="flex items-center gap-3">
               <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-slate-800">
